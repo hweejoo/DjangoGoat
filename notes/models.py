@@ -5,16 +5,12 @@ from common.models import TimeStampedModel
 
 class Note(TimeStampedModel):
     sender = models.ForeignKey(
-        'auth.User',
-        on_delete=models.PROTECT,
-        related_name='sender'
+        "auth.User", on_delete=models.PROTECT, related_name="sender"
     )
     receiver = models.ForeignKey(
-        'auth.User',
-        on_delete=models.PROTECT,
-        related_name='receiver'
+        "auth.User", on_delete=models.PROTECT, related_name="receiver"
     )
     content = models.TextField(max_length=255)
 
     class Meta:
-        ordering = ['created']
+        ordering = ["created"]
